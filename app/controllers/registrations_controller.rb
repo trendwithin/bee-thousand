@@ -2,8 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     super
     if @user.persisted?
-      byebug
-      UserMailer.account_registration(@user) # .deliver
+      UserMailer.account_registration(@user)
     end
   end
 end
