@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :lockable
+
+  enum registration_status: { pending: 0, registered: 1, expired: 2 }
 end
