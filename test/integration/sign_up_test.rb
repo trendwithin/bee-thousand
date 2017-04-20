@@ -12,5 +12,6 @@ class SignUpTest < ActionDispatch::IntegrationTest
     end
     user = User.find_by(email: 'signuptest@example.com')
     assert_equal 'pending', user.registration_status
+    assert_equal 'standard', user.role
   end
 end

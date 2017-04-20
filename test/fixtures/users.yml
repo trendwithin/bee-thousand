@@ -9,15 +9,18 @@ vic:
   email: vic@theshield.net
   encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
   registration_status: 1
+  role: 1
 
 
 lem:
   email: lem@theshield.net
   encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
   registration_status: 2
+  role: 0
 
 
 shane:
   email: shane@theshield.net
   encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
   registration_status: 0
+  role: 0
