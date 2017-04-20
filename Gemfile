@@ -8,6 +8,9 @@ end
 
 # Project Gems:
 gem 'devise', '~> 4.2', '>= 4.2.1'
+gem 'newrelic_rpm', '~> 4.1', '>= 4.1.0.333'
+gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
@@ -41,6 +44,14 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'awesome_print', '~> 1.7'
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  gem 'guard', '~> 2.14', '>= 2.14.1'
+  gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
+  gem 'terminal-notifier', '~> 1.7', '>= 1.7.1'
+  gem 'terminal-notifier-guard', '~> 1.7'
+  gem 'minitest-reporters', '~> 1.1', '>= 1.1.14'
+  gem 'pry-byebug', '~> 3.4', '>= 3.4.2'
 end
 
 group :development do
