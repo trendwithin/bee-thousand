@@ -15,3 +15,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore Spring files.
+/spring/*.pid
+
+# Ignore application configuration
+/config/application.yml
