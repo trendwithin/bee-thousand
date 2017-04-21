@@ -9,6 +9,6 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   test 'Should have Sign Up Button' do
     get root_path
     assert_response :success
-    assert_select "a.btn", text: 'Sign Up', path: '/uses/sign_up'
+    assert_select 'a[href=?]', new_user_registration_path, 'Sign Up'
   end
 end
