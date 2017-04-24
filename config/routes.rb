@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'timelines/index'
+
   root 'pages#welcome'
   get 'pages/registered'
   get 'pages/about'
