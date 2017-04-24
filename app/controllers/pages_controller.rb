@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   layout "page"
-  before_action :authenticate_user!, except: :welcome
+  before_action :authenticate_user!, only: :registered
   def welcome
   end
 
@@ -8,5 +8,8 @@ class PagesController < ApplicationController
   end
 
   def about
+  end
+
+  def testimonial
   end
 end
