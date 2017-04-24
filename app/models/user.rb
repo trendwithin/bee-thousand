@@ -9,5 +9,5 @@ class User < ApplicationRecord
   enum role: { standard: 0, admin: 1 }
 
 
-  has_many :microposts
+  has_many :microposts, dependent: :destroy
 end

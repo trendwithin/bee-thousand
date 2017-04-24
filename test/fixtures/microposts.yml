@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyText
-  user: one
+  content: 'This is micropost one, but not the most recent'
+  created_at: <%= 10.minutes.ago %>
 
 two:
-  content: MyText
-  user: two
+  content: 'This is micropost two, but the time is 50 minutes before one'
+  created_at: <%= 1.hour.ago %>
+
+newest:
+  content: 'This is the newest micropost written just now'
+  created_at: <%= Time.zone.now %>

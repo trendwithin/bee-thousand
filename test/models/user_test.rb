@@ -17,4 +17,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = 'a' * 129
     refute @user.valid?
   end
+
+  test 'user associated micropost destroyed upon user deletion' do
+    @user.save
+    @user.microposts.create!(content: 'Lorem Lorax Saves Micropost')
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy
+    end
+  end
 end
