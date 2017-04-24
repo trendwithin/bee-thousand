@@ -5,10 +5,10 @@
         <div class="inner">
           <h3 class="masthead-brand">Bee Thousand</h3>
           <nav class="nav nav-masthead">
-            <a class="nav-link" href="#">Contact</a>
-            <a class="nav-link active" href="#">About</a>
-            <a class="nav-link" href="#">Testimonials</a>
-            <a class="nav-link" href="#">Login</a>
+            <%= link_to 'Contact', pages_contact_path, class: 'nav-link' %>
+            <%= link_to 'About', pages_about_path, class: 'nav-link' %>
+            <%= link_to 'Testimonials', pages_testimonial_path, class: 'nav-link' %>
+            <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
           </nav>
         </div>
       </div>
@@ -39,9 +39,8 @@
 
       <div class="inner cover">
         <p class="lead">
-          <%= link_to 'Sign Up', new_user_registration_path %>
-          <a href="#" class="btn btn-lg btn-primary">Sign Up</a>
-          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-lg btn-primary' %>
+          <%= link_to 'Learn More', pages_about_path, class: 'btn btn-lg btn-secondary' %>
         </p>
       </div>
       <div class="cover-container">
