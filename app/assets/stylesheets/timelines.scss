@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'bootstrap';
+@import 'variables';
 /* General CSS Setup */
 body{
-  background-color: lightblue;
+  background-color: $background-color;
   font-family: "Ubuntu-Italic", "Lucida Sans", helvetica, sans;
 }
 
@@ -12,10 +13,11 @@ body{
 .container {
   padding: 5% 5%;
 }
-
+/* https://codepen.io/Founts/pen/gmhcl */
 /* CSS talk bubble */
 .talk-bubble {
-	margin: 40px;
+	margin: .75%;
+  margin-left: 3%;
   display: inline-block;
   position: relative;
 	width: 80%;
@@ -60,7 +62,7 @@ body{
 
 /* talk bubble contents */
 .talktext{
-  padding: 1em;
+  padding-left: 1.5em;
 	text-align: left;
   line-height: 1.5em;
 }
@@ -68,4 +70,9 @@ body{
   /* remove webkit p margins */
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
+}
+
+.img-gravatar{
+  margin-top: 40%;
+  margin-left: 15%;
 }
