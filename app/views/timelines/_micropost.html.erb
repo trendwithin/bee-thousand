@@ -4,12 +4,11 @@
     <div class="talk-bubble tri-right left-top border">
       <div class="talktext">
         <li id="micropost-<%= dom_id(micropost) %>">
-        <span>User Name</span>
+        <span><%= micropost.user_email %></span>
         <span>Post TIme</span>
         <span>Hearts</span>
         </li>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero nulla voluptates animi doloribus velit, reiciendis voluptatum sunt delectus, quia dolor mollitia reprehenderit? Debitis blanditiis, corporis! Officiis ab, quaerat dolores. Doloremque.</p>
+        <p><%= micropost.content %></p>
       </div>
     </div>
   </div>
