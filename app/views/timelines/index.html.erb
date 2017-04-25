@@ -1,6 +1,7 @@
 <header>
   <h1>This Will Be A Header.</h1>
 </header>
+
 <div class="row">
   <div class="col-md-9 col-offset-md-3">
     <h2>Timeline</h2>
@@ -14,40 +15,17 @@
 <div class="row">
   <div class="col-sm-12 col-md-3 push-md-9">
     <div class="card" style="width: 95%;">
-    <div class="card-block">
-      <h4 class="card-title">Entry XYZ $20.01</h4>
-      <p class="card-text">Shares: 100</p>
-      <p>Notes About Trade.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="card-block">
+        <h4 class="card-title">Entry XYZ $20.01</h4>
+        <p class="card-text">Shares: 100</p>
+        <p>Notes About Trade.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
-  </div>
   </div>
   <div class="col-sm-12 col-md-9 pull-md-3">
-    <div class="row">
-      <div class="col-md-12 clearfix">
-        <img src="http://placehold.it/50x50" alt="Gravatar" class='float-left'>
-        <div class="talk-bubble tri-right left-top border">
-          <div class="talktext">
-            <p>This one adds a right triangle on the left, flush at the top by using .tri-right and .left-top to specify the location.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <img src="http://placehold.it/50x50" alt="Gravatar" class='float-left'>
-        <div class="talk-bubble tri-right left-top border">
-          <div class="talktext">
-            <div class="row">
-              <div class="col-md-4">User Name</div>
-              <div class="col-md-4">Post TIme</div>
-              <div class="col-md-4">Hearts</div>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero nulla voluptates animi doloribus velit, reiciendis voluptatum sunt delectus, quia dolor mollitia reprehenderit? Debitis blanditiis, corporis! Officiis ab, quaerat dolores. Doloremque.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <ol class="microposts">
+    <%= render partial: 'micropost', collection: @microposts  %>
+    </ol>
   </div>
 </div>
