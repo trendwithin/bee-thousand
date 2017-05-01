@@ -9,6 +9,7 @@
         <span>Hearts</span>
         </li>
         <p><%= micropost.content %></p>
+        <%= link_to 'Delete', micropost, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     </div>
   </div>

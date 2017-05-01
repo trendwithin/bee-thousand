@@ -4,11 +4,7 @@
 
 <div class="row">
   <div class="col-md-9 col-offset-md-3">
-    <h2>Timeline</h2>
-    <form action="">
-      <textarea name="" id="" cols="85" rows="5"></textarea>
-    </form>
-    <button>Submit</button>
+    <%= render 'microposts/form', micros: @microposts %>
   </div>
 </div>
 
@@ -25,7 +21,8 @@
   </div>
   <div class="col-sm-12 col-md-9 pull-md-3">
     <ol class="microposts">
-    <%= render partial: 'micropost', collection: @microposts  %>
+    <%#= render partial: 'microposts/micropost', collection: @microposts  %>
+    <%= render @microposts %>
     </ol>
   </div>
 </div>
