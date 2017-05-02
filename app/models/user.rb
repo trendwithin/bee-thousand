@@ -11,6 +11,14 @@ class User < ApplicationRecord
 
   has_many :microposts, dependent: :destroy
 
+  def admin?
+    role == 'admin'
+  end
+
+  def registered?
+    role = 'registered'
+  end
+
   def active_for_authentication?
     super && self.registration_status == 'registered'
   end
