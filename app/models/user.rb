@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
 
   has_many :microposts, dependent: :destroy
+
+  def active_for_authentication?
+    super && self.registration_status == 'registered'
+  end
 end

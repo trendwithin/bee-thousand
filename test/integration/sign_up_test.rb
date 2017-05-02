@@ -15,8 +15,9 @@ class SignUpTest < ActionDispatch::IntegrationTest
       post user_registration_path, params: { user: { email: 'signuptest@example.com', password: 'password' } }
     end
     follow_redirect!
-    assert_equal "Welcome! You have signed up successfully.", flash[:notice]
-    assert_equal '/pages/registered', path
+    alert = "You have signed up successfully. Please email admin if confirmation and activation is not received within 24 hours."
+    assert_equal alert, flash[:notice]
+    assert_equal root_path, path
     user = User.find_by(email: 'signuptest@example.com')
     assert_equal 'pending', user.registration_status
     assert_equal 'standard', user.role
