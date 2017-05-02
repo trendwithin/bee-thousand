@@ -12,6 +12,7 @@ gem 'newrelic_rpm', '~> 4.1', '>= 4.1.0.333'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'pundit', '~> 1.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
