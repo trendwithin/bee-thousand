@@ -7,9 +7,11 @@
         <span><%= micropost.user_email %></span>
         <span>Post TIme</span>
         <span>Hearts</span>
+        <% if current_user.admin? %>
+          <%= link_to 'Delete', micropost, class: 'delete-post', method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
         </li>
         <p><%= micropost.content %></p>
-        <%= link_to 'Delete', micropost, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     </div>
   </div>
