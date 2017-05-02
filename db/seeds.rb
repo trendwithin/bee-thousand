@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create!(email: 'seed_user@example.com', password: 'password')
+user = User.first
+10.times do |n|
+  content = "This is the #{n + 1} micropost."
+  user.microposts.create!(content: content)
+end

@@ -1,0 +1,14 @@
+<%= form_for @micropost do |f| %>
+  <% if @micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@micropost.errors.count, 'error') %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+  <%= f.text_area :content, rows: 5, cols: 85 %> <br>
+  <%= f.submit 'Submit', class: 'btn btn-md btn-primary' %>
+<% end %>

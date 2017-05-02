@@ -24,3 +24,9 @@ shane:
   encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
   registration_status: 0
   role: 0
+
+ronnie:
+  email: ronnie@theshield.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  registration_status: 1
+  role: 0

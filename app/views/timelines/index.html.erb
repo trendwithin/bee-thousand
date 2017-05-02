@@ -1,0 +1,28 @@
+<header>
+  <h1>This Will Be A Header.</h1>
+</header>
+
+<div class="row">
+  <div class="col-md-9 col-offset-md-3">
+    <%= render 'microposts/form', micros: @microposts %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-3 push-md-9">
+    <div class="card" style="width: 95%;">
+      <div class="card-block">
+        <h4 class="card-title">Entry XYZ $20.01</h4>
+        <p class="card-text">Shares: 100</p>
+        <p>Notes About Trade.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-9 pull-md-3">
+    <ol class="microposts">
+    <%#= render partial: 'microposts/micropost', collection: @microposts  %>
+    <%= render @microposts %>
+    </ol>
+  </div>
+</div>

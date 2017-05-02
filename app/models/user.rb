@@ -8,4 +8,10 @@ class User < ApplicationRecord
   enum registration_status: { pending: 0, registered: 1, expired: 2 }
   enum role: { standard: 0, admin: 1 }
 
+
+  has_many :microposts, dependent: :destroy
+
+  def active_for_authentication?
+    super && self.registration_status == 'registered'
+  end
 end
