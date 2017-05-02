@@ -1,7 +1,10 @@
 class MicropostsController < ApplicationController
+  before_action :authenticate_user!
+  after_action :verify_authorized
 
   def create
-    @micropost = User.first.microposts.build(micropost_params)
+    @micropost = current_user.microposts.build(micropost_params)
+    authorize @micropost
     if @micropost.save
       flash[:notice] = 'Posted Successfully.'
       redirect_to timelines_index_path
@@ -13,6 +16,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost = Micropost.find(params[:id])
+    authorize @micropost
     @micropost.destroy
     redirect_to timelines_index_path, notice: 'Post Deleted.'
   end
