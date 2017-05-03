@@ -1,17 +1,7 @@
 <div class="site-wrapper">
   <div class="site-wrapper-inner">
     <div class="cover-container">
-      <div class="masthead clearfix">
-        <div class="inner">
-          <h3 class="masthead-brand">Bee Thousand</h3>
-          <nav class="nav nav-masthead">
-            <%= link_to 'Contact', pages_contact_path, class: 'nav-link' %>
-            <%= link_to 'About', pages_about_path, class: 'nav-link' %>
-            <%= link_to 'Testimonials', pages_testimonial_path, class: 'nav-link' %>
-            <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
-          </nav>
-        </div>
-      </div>
+      <%= render 'shared/page_navbar' %>
     </div>
 
       <div class="container">
