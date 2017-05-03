@@ -28,5 +28,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     valid_user = users(:vic)
     post user_session_path, params: { user: { email: valid_user.email, password: 'password' } }
     assert_match 'Signed in successfully.', flash[:notice]
+    follow_redirect!
+    assert_equal timelines_index_path, @request.env['PATH_INFO']
   end
 end
