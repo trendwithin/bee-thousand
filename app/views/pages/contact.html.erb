@@ -1,1 +1,29 @@
-This Will Be A Conact Page
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <%= render 'shared/page_navbar' %>>
+    </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            Contact Page
+          </div>
+        </div>
+      </div>
+
+      <div class="inner cover">
+        <p class="lead">
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-lg btn-primary' %>
+          <%= link_to 'Learn More', pages_about_path, class: 'btn btn-lg btn-secondary' %>
+        </p>
+      </div>
+      <div class="cover-container">
+        <div class="mastfoot">
+          <div class="inner">
+            <p>Disclaimer</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
