@@ -6,7 +6,9 @@
         <li id="micropost-<%= dom_id(micropost) %>">
         <span><%= micropost.user_email %></span>
         <span>Post Time</span>
-        <span>Hearts</span>
+        <span>  <%= fa_icon 'heart', class: 'red' %></span>
+
+
         <%= delete_micropost_helper micropost %>
         </li>
         <p><%= micropost.content %></p>
