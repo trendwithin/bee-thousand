@@ -52,4 +52,13 @@ class MicropostIntegrationTest < ActionDispatch::IntegrationTest
     end
     assert_select 'div#error_explanation'
   end
+
+  test 'should like a micropost' do
+    sign_in registered
+    get timelines_index_path
+    assert_select 'a[href=?]', micropost_like_path(microposts(:one))
+    assert_difference 'Like.count' do
+      post micropost_like_path(microposts(:one))
+    end
+  end
 end
