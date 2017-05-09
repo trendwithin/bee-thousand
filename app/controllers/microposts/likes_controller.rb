@@ -1,7 +1,7 @@
 class Microposts::LikesController < ApplicationController
   before_action :set_micropost
   before_action :authenticate_user!
-  
+
   def create
     @micropost.likes.where(user_id: current_user.id).first_or_create
     respond_to do |format|
