@@ -4,4 +4,8 @@ module TimelinesHelper
        link_to 'Delete', micropost, class: 'delete-post', method: :delete, data: { confirm: 'Are you sure?' }
      end
   end
+
+  def liked?(micropost)
+    'red' if current_user.likes?(micropost)
+  end
 end
