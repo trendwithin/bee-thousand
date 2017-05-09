@@ -6,7 +6,7 @@
         <li id="micropost-<%= dom_id(micropost) %>">
         <span><%= micropost.user_email %></span>
         <span>Post Time</span>
-        <span>  <%= fa_icon 'heart', class: 'red' %></span>
+        <span id='likes'>  <%= render partial: 'microposts/likes', locals: { micropost: micropost } %></span>
 
 
         <%= delete_micropost_helper micropost %>
