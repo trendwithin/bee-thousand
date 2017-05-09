@@ -52,4 +52,39 @@ class MicropostIntegrationTest < ActionDispatch::IntegrationTest
     end
     assert_select 'div#error_explanation'
   end
+
+  test 'like count increases when user likes a micropost' do
+    sign_in registered
+    get timelines_index_path
+    assert_select 'a[href=?]', micropost_like_path(microposts(:one))
+    assert_difference 'Like.count' do
+      post micropost_like_path(microposts(:one))
+    end
+  end
+
+  test 'user should only like a micropost once' do
+    sign_in registered
+    get timelines_index_path
+    assert_difference 'Like.count' do
+      post micropost_like_path(microposts(:one))
+    end
+
+    assert_difference 'Like.count', 0 do
+      post micropost_like_path(microposts(:one))
+    end
+  end
+
+  test 'like count increases via ajax post' do
+    sign_in registered
+    micropost = microposts(:one)
+    assert_difference 'Like.count' do
+      post micropost_like_path(micropost), xhr: true
+    end
+  end
+
+  test 'like count will not increase when not logged in' do
+    assert_difference 'Like.count', 0 do
+      post micropost_like_path(microposts(:one))
+    end
+  end
 end

@@ -5,24 +5,22 @@ class PagesHelperTest < ActionView::TestCase
   attr_reader :items
 
   def setup
-    @items = [
-              {
-                url: pages_contact_path,
-                title: 'Contact'
-              },
-              {
-                url: pages_about_path,
-                title: 'About'
-              },
-              {
-                url: pages_testimonial_path,
-                title: 'Testimonials'
-              }
-          ]
+    @urls = ['/pages/contact', '/pages/about', '/pages/testimonial']
+    @titles = ['Contact', 'About', 'Testimonials']
   end
 
-  test 'nav_items returns correct values' do
-   assert_equal items, nav_items
+  test 'nav_items returns expected urls' do
+    nav = nav_items
+    nav.each do |elem|
+      assert_equal true, @urls.include?(elem[:url])
+    end
+  end
+
+  test 'nav_items returns expected titles' do
+    nav = nav_items
+    nav.each do |elem|
+      assert_equal true, @titles.include?(elem[:title])
+    end
   end
 
   test 'active? page returns true for current_page?' do

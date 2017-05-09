@@ -16,3 +16,9 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function () {
+  $(".fa-heart").click( function() {
+    $(this).css('color', '#ff0000');
+  });
+});

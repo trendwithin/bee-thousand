@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
 
   has_many :microposts, dependent: :destroy
+  has_many :likes
 
   def admin?
     role == 'admin'
@@ -19,7 +20,13 @@ class User < ApplicationRecord
     role = 'registered'
   end
 
+  def likes?(micropost)
+    micropost.likes.where(user_id: id).any?
+  end
+
   def active_for_authentication?
     super && self.registration_status == 'registered'
   end
+
+
 end

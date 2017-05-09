@@ -3,10 +3,15 @@
   <img src="http://placehold.it/50x50" alt="Gravatar" class='float-left'>
     <div class="talk-bubble tri-right left-top border">
       <div class="talktext">
-        <li id="micropost-<%= dom_id(micropost) %>">
+        <ul>
+          <li id=micropost-<%= dom_id(micropost) %>>
+        </ul>
+
         <span><%= micropost.user_email %></span>
         <span>Post Time</span>
-        <span>Hearts</span>
+        <span id='likes'>  <%= render partial: 'microposts/likes', locals: { micropost: micropost } %></span>
+
+
         <%= delete_micropost_helper micropost %>
         </li>
         <p><%= micropost.content %></p>
