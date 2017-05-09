@@ -2,10 +2,10 @@ require 'test_helper'
 
 class TimelinesHelperTest < ActionView::TestCase
   test 'liked post font color is red' do
-    liked_micropost = microposts(:one)
+    liked_micropost = microposts(:newest)
     not_liked = microposts(:two)
     fake_view = Object.new
-    
+
     class << fake_view
       include TimelinesHelper
 
