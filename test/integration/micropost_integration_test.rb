@@ -81,4 +81,10 @@ class MicropostIntegrationTest < ActionDispatch::IntegrationTest
       post micropost_like_path(micropost), xhr: true
     end
   end
+
+  test 'like count will not increase when not logged in' do
+    assert_difference 'Like.count', 0 do
+      post micropost_like_path(microposts(:one))
+    end
+  end
 end
