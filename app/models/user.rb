@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   has_many :microposts, dependent: :destroy
   has_many :likes
+  has_many :alerts
 
   def admin?
     role == 'admin'
