@@ -6,6 +6,4 @@ class Alert < ApplicationRecord
   validates :shares, length: { maximum: 6 }
   validates :stop, length: { maximum: 6 }
   validates :target, length: { maximum: 6 }
-
-
 end

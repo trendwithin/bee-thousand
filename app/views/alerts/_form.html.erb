@@ -1,0 +1,25 @@
+<%= form_for @alert do |f| %>
+  <% if @alert.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(@alert.errors.count, 'error') %> prohibited this post from being saved:</h5>
+      <ul>
+        <% @alert.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :symbol %>
+  <%= f.text_field :symbol %> <br>
+  <%= f.label :entry %>
+  <%= f.text_field :entry %> <br>
+  <%= f.label :stop %>
+  <%= f.text_field :stop %> <br>
+  <%= f.label :target %>
+  <%= f.text_field :target %> <br>
+  <%= f.label :shares %>
+  <%= f.text_field :shares %> <br>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %> <br>
+  <%= f.submit 'Submit', class: 'btn btn-md btn-primary' %>
+<% end %>

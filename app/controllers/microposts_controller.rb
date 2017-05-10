@@ -10,6 +10,8 @@ class MicropostsController < ApplicationController
       redirect_to timelines_index_path
     else
       @microposts = Micropost.all
+      @alert = Alert.new
+      @alerts = Alert.all
       render 'timelines/index', layout: 'timeline'
     end
   end

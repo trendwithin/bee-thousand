@@ -5,6 +5,9 @@ class AlertsController < ApplicationController
       flash[:notice] = 'Alert Posted Successfully.'
       redirect_to timelines_index_path
     else
+      @micropost = Micropost.new
+      @microposts = Micropost.all
+      @alerts = Alert.all
       render 'timelines/index', layout: 'timeline'
     end
   end
